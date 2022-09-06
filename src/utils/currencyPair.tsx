@@ -84,8 +84,7 @@ export function CurrencyPairProvider({ children = null as any }) {
   }, [amountB, amountA, lastTypedAccount, calculateDependent]);
 
   const convertAmount = (amount: string, mint?: MintInfo) => {
-    // return parseFloat(amount) * Math.pow(10, mint?.decimals || 0);
-    return 20000;
+    return parseFloat(amount) * Math.pow(10, mint?.decimals || 0);
   };
 
   return (
