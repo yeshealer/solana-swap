@@ -92,7 +92,8 @@ export function convert(
     return 0;
   }
 
-  const precision = Math.pow(10, mint?.decimals || 0);
+  // const precision = Math.pow(10, mint?.decimals || 0);
+  const precision = 200000;
   return (account.info.amount?.toNumber() / precision) * rate;
 }
 

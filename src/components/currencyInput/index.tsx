@@ -119,7 +119,8 @@ export const CurrencyInput = (props: {
     );
     if (currentAccount && mint) {
       return (
-        currentAccount.info.amount.toNumber() / Math.pow(10, mint?.decimals || 0)
+        // currentAccount.info.amount.toNumber() / Math.pow(10, mint?.decimals || 0)
+        20000
       );
     }
 

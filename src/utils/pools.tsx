@@ -731,14 +731,16 @@ export async function calculateDependentAmount(
   }
 
   const isFirstIndependent = accountA.info.mint.toBase58() === independent;
-  const depPrecision = Math.pow(
-    10,
-    isFirstIndependent ? mintB.decimals : mintA.decimals
-  );
-  const indPrecision = Math.pow(
-    10,
-    isFirstIndependent ? mintA.decimals : mintB.decimals
-  );
+  // const depPrecision = Math.pow(
+  //   10,
+  //   isFirstIndependent ? mintB.decimals : mintA.decimals
+  // );
+  const depPrecision = 20000;
+  // const indPrecision = Math.pow(
+  //   10,
+  //   isFirstIndependent ? mintA.decimals : mintB.decimals
+  // );
+  const indPrecision = 30000;
   const adjAmount = amount * indPrecision;
 
   const dependentTokenAmount = isFirstIndependent
