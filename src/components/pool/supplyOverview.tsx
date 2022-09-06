@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { Card } from "antd";
 import { getTokenName, formatTokenAmount, convert } from "../../utils/utils";
-import { PieChart, Pie, Cell } from "recharts";
 import { useMint, useAccount } from "../../utils/accounts";
 import {
   ENDPOINTS,
@@ -152,22 +151,6 @@ export const SupplyOverview = (props: {
   return (
     <Card style={{ borderWidth: 0 }}>
       <div style={{ display: "flex" }}>
-        <PieChart width={150} height={150}>
-          <Pie
-            dataKey="value"
-            isAnimationActive={false}
-            data={data}
-            labelLine={false}
-            cx={70}
-            cy={70}
-            label={(props) => renderCustomizedLabel(props, data)}
-            outerRadius={60}
-          >
-            {data.map((entry, index) => (
-              <Cell key={`cell-${index}`} stroke="" fill={entry.color} />
-            ))}
-          </Pie>
-        </PieChart>
         <div
           style={{
             display: "flex",
